@@ -2,48 +2,51 @@
 
 class Solution
 {
-    public static string EvaluateExpression(string expression)
+    static string EvaluateExpression(string expression)
     {
-        if (string.IsNullOrWhiteSpace(expression))
+        if (expression == null || expression == "")
             return "Error:InvalidExpression";
 
         string[] parts = expression.Split(' ');
 
         if (parts.Length != 3)
             return "Error:InvalidExpression";
+        string firstNumber = parts[0];
+        string operatorSymbol = parts[1];
+        string secondNumber = parts[2];
 
         int a, b;
+
         try
         {
-            a = Convert.ToInt32(parts[0]);
-            b = Convert.ToInt32(parts[2]);
+            a = Convert.ToInt32(firstNumber);
+            b = Convert.ToInt32(secondNumber);
         }
         catch
         {
             return "Error:InvalidNumber";
         }
 
-        string op = parts[1];
-        switch (op)
+        if (operatorSymbol == "+")
+            return (a + b).ToString();
+
+        if (operatorSymbol == "-")
+            return (a - b).ToString();
+
+        if (operatorSymbol == "*")
+            return (a * b).ToString();
+
+        if (operatorSymbol == "/")
         {
-            case "+":
-                return (a + b).ToString();
+            if (b == 0)
+                return "Error:DivideByZero";
 
-            case "-":
-                return (a - b).ToString();
-
-            case "*":
-                return (a * b).ToString();
-
-            case "/":
-                if (b == 0)
-                    return "Error:DivideByZero";
-                return (a / b).ToString();
-
-            default:
-                return "Error:UnknownOperator";
+            return (a / b).ToString();
         }
+
+        return "Error:UnknownOperator";
     }
+
     static void Main()
     {
         Console.WriteLine(EvaluateExpression("10 + 5"));
@@ -53,3 +56,4 @@ class Solution
         Console.WriteLine(EvaluateExpression("10 5"));
     }
 }
+
