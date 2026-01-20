@@ -18,7 +18,7 @@ class Progam
         int[] arr=Multiplicationtable(n,upto);
         for(int i = 1; i <=upto; i++)
         {
-            System.Console.WriteLine(arr[i-1]+" ");
+            System.Console.Write(arr[i-1]+" ");
         }
         
     }
