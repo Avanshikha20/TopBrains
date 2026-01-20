@@ -1,0 +1,15 @@
+D:\TopBrain\Height\obj\Debug\net10.0\Height.GeneratedMSBuildEditorConfig.editorconfig
+D:\TopBrain\Height\obj\Debug\net10.0\Height.AssemblyInfoInputs.cache
+D:\TopBrain\Height\obj\Debug\net10.0\Height.AssemblyInfo.cs
+D:\TopBrain\Height\obj\Debug\net10.0\Height.csproj.CoreCompileInputs.cache
+D:\TopBrain\Height\obj\Debug\net10.0\Height.sourcelink.json
+D:\TopBrain\Height\bin\Debug\net10.0\Height.exe
+D:\TopBrain\Height\bin\Debug\net10.0\Height.deps.json
+D:\TopBrain\Height\bin\Debug\net10.0\Height.runtimeconfig.json
+D:\TopBrain\Height\bin\Debug\net10.0\Height.dll
+D:\TopBrain\Height\bin\Debug\net10.0\Height.pdb
+D:\TopBrain\Height\obj\Debug\net10.0\Height.dll
+D:\TopBrain\Height\obj\Debug\net10.0\refint\Height.dll
+D:\TopBrain\Height\obj\Debug\net10.0\Height.pdb
+D:\TopBrain\Height\obj\Debug\net10.0\Height.genruntimeconfig.cache
+D:\TopBrain\Height\obj\Debug\net10.0\ref\Height.dll
