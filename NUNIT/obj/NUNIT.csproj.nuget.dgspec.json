@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\TopBrain\\ArithmeticExpressions\\ArithmeticExpressions.csproj": {}
+    "D:\\TopBrain\\NUNIT\\NUNIT.csproj": {}
   },
   "projects": {
-    "D:\\TopBrain\\ArithmeticExpressions\\ArithmeticExpressions.csproj": {
+    "D:\\TopBrain\\NUNIT\\NUNIT.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\TopBrain\\ArithmeticExpressions\\ArithmeticExpressions.csproj",
-        "projectName": "ArithmeticExpressions",
-        "projectPath": "D:\\TopBrain\\ArithmeticExpressions\\ArithmeticExpressions.csproj",
+        "projectUniqueName": "D:\\TopBrain\\NUNIT\\NUNIT.csproj",
+        "projectName": "NUNIT",
+        "projectPath": "D:\\TopBrain\\NUNIT\\NUNIT.csproj",
         "packagesPath": "C:\\Users\\singh\\.nuget\\packages\\",
-        "outputPath": "D:\\TopBrain\\ArithmeticExpressions\\obj\\",
+        "outputPath": "D:\\TopBrain\\NUNIT\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

@@ -14,11 +14,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\TopBrain\\BankingTransactionModule\\BankingTransactionModule1.csproj",
-      "projectName": "BankingTransactionModule1",
-      "projectPath": "D:\\TopBrain\\BankingTransactionModule\\BankingTransactionModule1.csproj",
+      "projectUniqueName": "D:\\TopBrain\\NUNIT\\NUNIT.csproj",
+      "projectName": "NUNIT",
+      "projectPath": "D:\\TopBrain\\NUNIT\\NUNIT.csproj",
       "packagesPath": "C:\\Users\\singh\\.nuget\\packages\\",
-      "outputPath": "D:\\TopBrain\\BankingTransactionModule\\obj\\",
+      "outputPath": "D:\\TopBrain\\NUNIT\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

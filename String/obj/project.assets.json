@@ -14,11 +14,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\TopBrain\\BankingTransactionModule\\BankingTransactionModule1.csproj",
-      "projectName": "BankingTransactionModule1",
-      "projectPath": "D:\\TopBrain\\BankingTransactionModule\\BankingTransactionModule1.csproj",
+      "projectUniqueName": "D:\\TopBrain\\String\\String.csproj",
+      "projectName": "String",
+      "projectPath": "D:\\TopBrain\\String\\String.csproj",
       "packagesPath": "C:\\Users\\singh\\.nuget\\packages\\",
-      "outputPath": "D:\\TopBrain\\BankingTransactionModule\\obj\\",
+      "outputPath": "D:\\TopBrain\\String\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -73,7 +73,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\10.0.102/PortableRuntimeIdentifierGraph.json",
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\10.0.101/PortableRuntimeIdentifierGraph.json",
         "packagesToPrune": {
           "Microsoft.CSharp": "(,4.7.32767]",
           "Microsoft.VisualBasic": "(,10.4.32767]",

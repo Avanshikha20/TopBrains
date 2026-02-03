@@ -1,0 +1,5 @@
+D:\TopBrain\NUNIT\obj\Debug\net10.0\NUNIT.GeneratedMSBuildEditorConfig.editorconfig
+D:\TopBrain\NUNIT\obj\Debug\net10.0\NUNIT.AssemblyInfoInputs.cache
+D:\TopBrain\NUNIT\obj\Debug\net10.0\NUNIT.AssemblyInfo.cs
+D:\TopBrain\NUNIT\obj\Debug\net10.0\NUNIT.csproj.CoreCompileInputs.cache
+D:\TopBrain\NUNIT\obj\Debug\net10.0\NUNIT.sourcelink.json
