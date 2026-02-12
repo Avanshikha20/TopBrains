@@ -1,0 +1,121 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+
+public class RealEstateListing
+{
+    public int ID { get; set; }
+    public string Title { get; set; }
+    public string Description { get; set; }
+    public int Price { get; set; }
+    public string Location { get; set; }
+}
+
+public class RealEstateApp
+{
+    private List<RealEstateListing> listings = new List<RealEstateListing>();
+
+    public void AddListing(RealEstateListing listing)
+    {
+        listings.Add(listing);
+    }
+
+    public void RemoveListing(int listingID)
+    {
+        RealEstateListing listing = listings.Find(l => l.ID == listingID);
+        if (listing != null)
+        {
+            listings.Remove(listing);
+        }
+    }
+
+    public void UpdateListing(RealEstateListing listing)
+    {
+        RealEstateListing existing = listings.Find(l => l.ID == listing.ID);
+        if (existing != null)
+        {
+            existing.Title = listing.Title;
+            existing.Description = listing.Description;
+            existing.Price = listing.Price;
+            existing.Location = listing.Location;
+        }
+    }
+
+    public List<RealEstateListing> GetListings()
+    {
+        return listings;
+    }
+
+    public List<RealEstateListing> GetListingsByLocation(string location)
+    {
+        return new List<RealEstateListing>(
+            listings.Where(l => l.Location == location)
+        );
+    }
+
+    public List<RealEstateListing> GetListingsByPriceRange(int minPrice, int maxPrice)
+    {
+        return new List<RealEstateListing>(
+            listings.Where(l => l.Price >= minPrice && l.Price <= maxPrice)
+        );
+    }
+}
+
+public class Program
+{
+    public static void Main()
+    {
+        RealEstateApp app = new RealEstateApp();
+
+        RealEstateListing l1 = new RealEstateListing { ID = 1, Title = "2BHK Apartment", Description = "Spacious apartment", Price = 4500000, Location = "Hyderabad" };
+        RealEstateListing l2 = new RealEstateListing { ID = 2, Title = "Villa", Description = "Luxury independent villa", Price = 8500000, Location = "Bangalore" };
+        RealEstateListing l3 = new RealEstateListing { ID = 3, Title = "Studio Flat", Description = "Compact studio", Price = 3000000, Location = "Hyderabad" };
+        RealEstateListing l4 = new RealEstateListing { ID = 4, Title = "Office Space", Description = "Commercial office", Price = 6500000, Location = "Pune" };
+
+        app.AddListing(l1);
+        app.AddListing(l2);
+        app.AddListing(l3);
+        app.AddListing(l4);
+
+        Console.WriteLine("TEST CASE 1: All Listings");
+        foreach (var l in app.GetListings())
+        {
+            Console.WriteLine($"ID: {l.ID}, Title: {l.Title}, Price: {l.Price}, Location: {l.Location}");
+        }
+
+        Console.WriteLine("\nTEST CASE 2: Listings in Hyderabad");
+        foreach (var l in app.GetListingsByLocation("Hyderabad"))
+        {
+            Console.WriteLine($"ID: {l.ID}, Title: {l.Title}, Price: {l.Price}, Location: {l.Location}");
+        }
+
+        Console.WriteLine("\nTEST CASE 3: Listings between 40L and 70L");
+        foreach (var l in app.GetListingsByPriceRange(4000000, 7000000))
+        {
+            Console.WriteLine($"ID: {l.ID}, Title: {l.Title}, Price: {l.Price}, Location: {l.Location}");
+        }
+
+        app.UpdateListing(new RealEstateListing
+        {
+            ID = 3,
+            Title = "Studio Flat",
+            Description = "Compact studio",
+            Price = 3200000,
+            Location = "Hyderabad"
+        });
+
+        Console.WriteLine("\nTEST CASE 4: Update Listing ID 3");
+        foreach (var l in app.GetListings())
+        {
+            Console.WriteLine($"ID: {l.ID}, Title: {l.Title}, Price: {l.Price}, Location: {l.Location}");
+        }
+
+        app.RemoveListing(2);
+
+        Console.WriteLine("\nTEST CASE 5: Remove Listing ID 2");
+        foreach (var l in app.GetListings())
+        {
+            Console.WriteLine($"ID: {l.ID}, Title: {l.Title}, Price: {l.Price}, Location: {l.Location}");
+        }
+    }
+}

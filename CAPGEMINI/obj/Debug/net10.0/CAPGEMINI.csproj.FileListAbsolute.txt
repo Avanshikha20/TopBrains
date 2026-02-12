@@ -1,0 +1,15 @@
+D:\TopBrain\CAPGEMINI\obj\Debug\net10.0\CAPGEMINI.GeneratedMSBuildEditorConfig.editorconfig
+D:\TopBrain\CAPGEMINI\obj\Debug\net10.0\CAPGEMINI.AssemblyInfoInputs.cache
+D:\TopBrain\CAPGEMINI\obj\Debug\net10.0\CAPGEMINI.AssemblyInfo.cs
+D:\TopBrain\CAPGEMINI\obj\Debug\net10.0\CAPGEMINI.csproj.CoreCompileInputs.cache
+D:\TopBrain\CAPGEMINI\obj\Debug\net10.0\CAPGEMINI.sourcelink.json
+D:\TopBrain\CAPGEMINI\bin\Debug\net10.0\CAPGEMINI.exe
+D:\TopBrain\CAPGEMINI\bin\Debug\net10.0\CAPGEMINI.deps.json
+D:\TopBrain\CAPGEMINI\bin\Debug\net10.0\CAPGEMINI.runtimeconfig.json
+D:\TopBrain\CAPGEMINI\bin\Debug\net10.0\CAPGEMINI.dll
+D:\TopBrain\CAPGEMINI\bin\Debug\net10.0\CAPGEMINI.pdb
+D:\TopBrain\CAPGEMINI\obj\Debug\net10.0\CAPGEMINI.dll
+D:\TopBrain\CAPGEMINI\obj\Debug\net10.0\refint\CAPGEMINI.dll
+D:\TopBrain\CAPGEMINI\obj\Debug\net10.0\CAPGEMINI.pdb
+D:\TopBrain\CAPGEMINI\obj\Debug\net10.0\CAPGEMINI.genruntimeconfig.cache
+D:\TopBrain\CAPGEMINI\obj\Debug\net10.0\ref\CAPGEMINI.dll
