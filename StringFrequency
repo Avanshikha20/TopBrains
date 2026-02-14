@@ -1,0 +1,32 @@
+using System;
+class Program
+{
+    public static void Main()
+    {
+        string st=Console.ReadLine();
+        int most=0;
+        int count=0;
+        char result=st[0];
+        for(int i = 0; i < st.Length; i++)
+        {
+            count=1;
+            for(int j = i + 1; j < st.Length; j++)
+            {
+                
+                if (st[i] == st[j])
+                {
+                    count++;
+                }
+                
+            }
+            if (count > most)
+            {
+                most=count;
+                result=st[i];
+            }
+            
+        }
+        
+        System.Console.WriteLine(result+" : "+most);
+    }
+}
