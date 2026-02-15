@@ -1,0 +1,106 @@
+namespace Domain
+{
+    public class Medicine
+    {
+        public string Id { get; set; }
+        public string Name { get; set; }
+        public int Price { get; set; }
+
+        public int ExpiryYear { get; set; }
+    }
+}
+///////// functionsfile
+using System.Collections.Generic;
+using Domain;
+using Exceptions;
+
+namespace Services
+{
+    public class MedicineUtility
+    {
+        private SortedDictionary<int, Medicine> _Medicines = new SortedDictionary<int, Medicine>();
+
+        List<Medicine> sameExpiryDate = new List<Medicine>();
+        public void AddMedicine(Medicine medicine)
+        {
+            int expirydate = medicine.ExpiryYear;
+            _Medicines.Add(expirydate, medicine);
+        }
+
+
+        public void GetAllMedicine()
+        {
+            foreach (KeyValuePair<int, Medicine> keyValuePair in _Medicines)
+            {
+
+                Console.WriteLine($"Details:  {keyValuePair.Value.Name} {keyValuePair.Value.Id} {keyValuePair.Value.Price} {keyValuePair.Value.ExpiryYear}");
+            }
+        }
+
+        public void UpdateMedicinePrice(string id, int newPrice)
+        {
+
+            if (_Medicines.ContainsKey(id))
+            {
+                _Medicines[id].Price=newPrice; 
+            }
+        }
+    }
+}
+/////MainProgram
+using System;
+using Domain;
+using Services;
+
+namespace ConsoleApp
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            Medicine medi = new Medicine();
+            MedicineUtility medicineUtility = new MedicineUtility();
+
+            while (true)
+            {
+                Console.WriteLine("1. Display All medicine");
+                Console.WriteLine("2. Update medicine Price");
+                Console.WriteLine("3. Add medicine");
+                Console.WriteLine("4. Exit");
+
+                int choice = Convert.ToInt32(Console.ReadLine());
+
+                switch (choice)
+                {
+                    case 1:
+                        medicineUtility.GetAllMedicine();
+                        break;
+                    case 2:
+                        Console.WriteLine("Enter the medicine id");
+                        string id = Console.ReadLine();
+                        Console.WriteLine("Enter the new price");
+                        int price = Convert.ToInt32(Console.ReadLine());
+                        medicineUtility.UpdateMedicinePrice(id, price);
+                        break;
+                    case 3:
+                        Console.WriteLine("Enter id ");
+                        string id1 = Console.ReadLine();
+                        Console.WriteLine("Enter name");
+                        string name1 = Console.ReadLine();
+                        Console.WriteLine("Enter price");
+                        int price1 = Convert.ToInt32(Console.ReadLine());
+                        Console.WriteLine("Enter Expiry year");
+                        int expirydate1 = Convert.ToInt32(Console.ReadLine());
+                        Medicine medicine = new Medicine() { Id = id1, Name = name1, Price = price1, ExpiryYear = expirydate1 };
+                        medicineUtility.AddMedicine(medicine);
+                        break;
+                    case 4:
+                        return;
+                    default:
+                        Console.WriteLine("Enter valid date");
+                        break;
+                }
+            }
+        }
+    }
+}
