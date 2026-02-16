@@ -1,0 +1,180 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+
+class InvalidGPAException : Exception
+{
+    public InvalidGPAException(string message) : base(message) { }
+}
+
+class DuplicateStudentException : Exception
+{
+    public DuplicateStudentException(string message) : base(message) { }
+}
+
+class StudentNotFoundException : Exception
+{
+    public StudentNotFoundException(string message) : base(message) { }
+}
+
+
+class Student
+{
+    public string Id { get; set; }
+    public string Name { get; set; }
+    public double GPA { get; set; }
+}
+
+
+
+class StudentUtility
+{
+    
+    public SortedDictionary<double, List<Student>> ranking =
+        new SortedDictionary<double, List<Student>>(
+            Comparer<double>.Create((a, b) => b.CompareTo(a))
+        );
+
+    public void AddStudent(Student student)
+    {
+        if (student.GPA < 0 || student.GPA > 10)
+            throw new InvalidGPAException("GPA must be between 0 and 10.");
+
+        if (ranking.Values.SelectMany(e => e).Any(e => e.Id == student.Id))
+            throw new DuplicateStudentException("Student already exists.");
+
+        if (!ranking.ContainsKey(student.GPA))
+            ranking[student.GPA] = new List<Student>();
+
+        ranking[student.GPA].Add(student);
+    }
+
+
+    public void UpdateGpa(string id, double newGpa)
+    {
+        if (newGpa < 0 || newGpa > 10)
+            throw new InvalidGPAException("GPA must be between 0 and 10.");
+
+        Student studentFound = null;
+        double oldGpa = 0;
+        foreach (var pair in ranking)
+        {
+            studentFound = pair.Value.FirstOrDefault(s => s.Id == id);
+            if (studentFound != null)
+            {
+                oldGpa = pair.Key;
+                break;
+            }
+        }
+
+        if (studentFound == null)
+            throw new StudentNotFoundException("Student not found.");
+
+      
+        ranking[oldGpa].Remove(studentFound);
+
+      
+        if (ranking[oldGpa].Count == 0)
+            ranking.Remove(oldGpa);
+
+        studentFound.GPA = newGpa;
+
+        if (!ranking.ContainsKey(newGpa))
+            ranking[newGpa] = new List<Student>();
+
+        ranking[newGpa].Add(studentFound);
+    }
+
+
+    public void DisplayRanking()
+    {
+        if (ranking.Count == 0)
+        {
+            Console.WriteLine("No students available.");
+            return;
+        }
+
+        Console.WriteLine("\n--- Student Ranking (Highest GPA First) ---");
+
+        foreach (var pair in ranking)
+        {
+            foreach (var student in pair.Value)
+            {
+                Console.WriteLine($"ID: {student.Id}, Name: {student.Name}, GPA: {student.GPA}");
+            }
+        }
+    }
+}
+
+
+class Program
+{
+    static void Main()
+    {
+        StudentUtility utility = new StudentUtility();
+
+        while (true)
+        {
+            Console.WriteLine("\n1 → Display Ranking");
+            Console.WriteLine("2 → Update GPA");
+            Console.WriteLine("3 → Add Student");
+            Console.WriteLine("4 → Exit");
+            Console.Write("Enter choice: ");
+
+            int choice = int.Parse(Console.ReadLine());
+
+            try
+            {
+                switch (choice)
+                {
+                    case 1:
+                        utility.DisplayRanking();
+                        break;
+                    case 2:
+                        string id = Console.ReadLine();
+
+                        double newGpa = double.Parse(Console.ReadLine());
+
+                        string sid = Console.ReadLine();
+
+                        string name = Console.ReadLine();
+                        Console.Write("Enter GPA: ");
+                        double gpa = double.Parse(Console.ReadLine());
+
+                        Student student = new Student
+                        {
+                            GPA = gpa
+
+                        break;
+
+
+                    default:
+                        Console.WriteLine("Invalid Choice.");
+                        break;
+                }
+            catch (Exception ex)
+                Console.WriteLine($"Error: {ex.Message}");
+            }
+        }
+    }
+}
+             {
+            }
+                    case 4:
+                        return;
+                        utility.AddStudent(student);
+                        Console.WriteLine("Student Added Successfully.");
+                        };
+                            Id = sid,
+                            Name = name,
+
+                        Console.Write("Enter Name: ");
+                        Console.Write("Enter ID: ");
+                    case 3:
+                        Console.WriteLine("GPA Updated Successfully.");
+                        break;
+                        utility.UpdateGpa(id, newGpa);
+
+                        Console.Write("Enter New GPA: ");
+                        Console.Write("Enter Student ID: ");
+
