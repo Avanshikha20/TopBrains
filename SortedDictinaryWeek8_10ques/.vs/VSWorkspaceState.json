@@ -1,0 +1,9 @@
+{
+  "ExpandedNodes": [
+    "",
+    "\\01_PharmacyMedicineSystem",
+    "\\01_PharmacyMedicineSystem\\Exceptions"
+  ],
+  "SelectedNode": "\\01_PharmacyMedicineSystem\\Exceptions\\InvalidExpiryYearException.cs",
+  "PreviewInSolutionExplorer": false
+}
