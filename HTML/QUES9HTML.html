@@ -1,0 +1,67 @@
+<html>
+<head>
+</head>
+<body>
+
+	<h1>Online Registration form</h1>
+	<form>
+		<table border="1">
+			<tr>
+				<td>
+					<label for="name">Name: </label>
+				</td>
+				<td>
+					<input type="text" id="name" name="name" placeholder="enter your name here"  required>
+				</td>
+			</tr>
+
+			<tr>
+				<td>
+					<label for="email">Email: </label>
+				</td>
+				<td>
+					<input type="email" id="email" name="email" placeholder="enter your mail here" required>
+				</td>
+			</tr>
+
+			
+			<tr>
+				<td>
+					<label for="mobile">Mobile: </label>
+				</td>
+				<td>
+					<input type="text" id="mobile"  name="mobile" placeholder="enter your phone number" required>
+				</td>
+			</tr>
+                         <tr><td> <label for="City">City</label></td>
+<td>
+                                   <Select name="city" id="city">
+				<option value="delhi">Delhi</option>
+				<option value="pune">Pune</option>
+				<option value="banglore">Banglore</option>
+				<option value="bihar">Bihar</option>
+						
+				</select>
+</td>
+</tr>
+		</table>
+   
+
+			<br>
+			<button  onclick="validatephone()">Validate</button>
+	</form>
+</body>
+<script>
+	function validatephone(){
+		let number = document.getElementById("mobile").value;
+		var pattern = /^[1-9][0-9]{9}$/;
+		if(pattern.test(number)){
+			alert("validated");
+		}else{
+			alert("not valid");
+		}
+		
+	}
+	
+</script>
+</html>
